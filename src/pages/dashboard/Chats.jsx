@@ -74,10 +74,7 @@ const Chats = () => {
         </Stack>
         <Stack spacing={1}>
           <Stack direction={"row"} alignItems="center" spacing={1.5}>
-            <ArchiveBox
-              size={24}
-              color={'#8fb4ff'}
-            />
+            <ArchiveBox size={24} color={"#8fb4ff"} />
             <Button>Archive</Button>
           </Stack>
           <Divider />

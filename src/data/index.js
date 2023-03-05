@@ -204,7 +204,7 @@ const Chat_History = [
     message: "fskjvnaoevnojwrnvovnolvnoevjevoevovvvsfvosvcsdnvdsvdlvn",
     incoming: true,
     outgoing: false,
-  }
+  },
 ];
 
 const Message_options = [

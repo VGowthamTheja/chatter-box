@@ -1,4 +1,4 @@
-import { StarIcon } from './CustomIcons';
+import { StarIcon } from "./CustomIcons";
 
 // ----------------------------------------------------------------------
 
@@ -15,13 +15,13 @@ export default function Rating(theme) {
 
       styleOverrides: {
         root: {
-          '&.Mui-disabled': {
+          "&.Mui-disabled": {
             opacity: 0.48,
           },
         },
         iconEmpty: { color: theme.palette.grey[500_48] },
-        sizeSmall: { '& svg': { ...ICON_SMALL } },
-        sizeLarge: { '& svg': { ...ICON_LARGE } },
+        sizeSmall: { "& svg": { ...ICON_SMALL } },
+        sizeLarge: { "& svg": { ...ICON_LARGE } },
       },
     },
   };
