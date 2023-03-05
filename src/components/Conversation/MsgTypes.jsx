@@ -97,7 +97,7 @@ const ReplyMsg = ({ el }) => {
         p={1.5}
         sx={{
           backgroundColor: el.incoming
-            ? theme.palette.background.default
+            ? theme.palette.background.paper
             : theme.palette.primary.main,
           borderRadius: 1.5,
           width: "max-content",
@@ -110,7 +110,7 @@ const ReplyMsg = ({ el }) => {
             spacing={3}
             alignItems="center"
             sx={{
-              backgroundColor: theme.palette.background.paper,
+              backgroundColor: theme.palette.background.default,
               borderRadius: 1,
             }}
           >
