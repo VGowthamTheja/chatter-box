@@ -11,8 +11,8 @@ export default function Typography(theme) {
           marginBottom: theme.spacing(1),
         },
         article: {
-          fontWeight: 700
-        }
+          fontWeight: 700,
+        },
       },
     },
   };
