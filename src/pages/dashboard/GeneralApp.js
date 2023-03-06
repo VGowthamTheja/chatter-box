@@ -15,8 +15,7 @@ const GeneralApp = () => {
           minHeight: '100%',
           backgroundColor:
             theme.palette.mode === 'light' ? '#e1eaf0' : theme.palette.background.default
-        }}
-      >
+        }}>
         <Conversation />
       </Box>
     </Stack>

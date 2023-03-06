@@ -38,8 +38,7 @@ export default function SettingLayout() {
                     color: 'primary.main',
                     boxShadow: (theme) => theme.customShadows.z20
                   })
-                }}
-              >
+                }}>
                 {isVertical ? (
                   <VerticalBox isSelected={isSelected} />
                 ) : (

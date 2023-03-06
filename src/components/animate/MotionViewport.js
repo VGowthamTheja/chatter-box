@@ -28,8 +28,7 @@ export default function MotionViewport({ children, disableAnimatedMobile = false
       whileInView="animate"
       viewport={{ once: true, amount: 0.3 }}
       variants={varContainer()}
-      {...other}
-    >
+      {...other}>
       {children}
     </Box>
   );

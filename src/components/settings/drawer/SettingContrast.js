@@ -38,8 +38,7 @@ export default function SettingContrast() {
                     color: 'primary.main',
                     boxShadow: (theme) => theme.customShadows.z20
                   })
-                }}
-              >
+                }}>
                 <Iconify
                   icon={index === 0 ? 'cil:contrast' : 'ion:contrast-outline'}
                   width={28}

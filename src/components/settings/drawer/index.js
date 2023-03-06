@@ -103,8 +103,7 @@ export default function SettingsDrawer() {
                 direction="row"
                 alignItems="center"
                 justifyContent="space-between"
-                sx={{ py: 2, pr: 1, pl: 2.5 }}
-              >
+                sx={{ py: 2, pr: 1, pl: 2.5 }}>
                 <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>
                   Settings
                 </Typography>

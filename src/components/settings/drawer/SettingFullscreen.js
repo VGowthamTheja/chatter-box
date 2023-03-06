@@ -34,8 +34,7 @@ export default function SettingFullscreen() {
           bgcolor: (theme) =>
             alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity)
         })
-      }}
-    >
+      }}>
       {fullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
     </Button>
   );

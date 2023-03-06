@@ -54,7 +54,6 @@ const SettingsProvider = ({ children }) => {
     if (isArabic) {
       onChangeDirectionByLang('ar');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isArabic]);
 
   // Mode
@@ -192,8 +191,7 @@ const SettingsProvider = ({ children }) => {
 
         // Reset
         onResetSetting
-      }}
-    >
+      }}>
       {children}
     </SettingsContext.Provider>
   );

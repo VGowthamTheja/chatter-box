@@ -40,8 +40,7 @@ const FabButtonAnimate = forwardRef(
             },
             ...sx
           }}
-          {...other}
-        >
+          {...other}>
           {children}
         </Fab>
       </AnimateWrap>
@@ -104,8 +103,7 @@ function AnimateWrap({ size, children, sxWrap }) {
       sx={{
         display: 'inline-flex',
         ...sxWrap
-      }}
-    >
+      }}>
       {children}
     </Box>
   );
