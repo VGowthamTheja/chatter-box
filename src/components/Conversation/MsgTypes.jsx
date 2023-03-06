@@ -1,4 +1,4 @@
-import { Box, Divider, IconButton, Link, Stack, Typography } from '@mui/material';
+import { Box, Divider, IconButton, Link, Menu, MenuItem, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import {
@@ -8,6 +8,7 @@ import {
   DownloadSimple,
   Image
 } from 'phosphor-react';
+import { Message_options } from '../../data';
 
 const Timeline = ({ el }) => {
   const theme = useTheme();
@@ -26,22 +27,20 @@ const TextMsg = ({ el }) => {
   const theme = useTheme();
   return (
     <Stack direction={'row'} justifyContent={el.incoming ? 'start' : 'end'}>
-      <Box>
-        <Box
-          p={1.5}
-          sx={{
-            backgroundColor: el.incoming
-              ? theme.palette.background.paper
-              : theme.palette.primary.main,
-            borderRadius: 1.5,
-            width: 'max-content'
-          }}>
-          <Typography variant={'body2'} color={el.incoming ? theme.palette.text : '#fff'}>
-            {el.message}
-          </Typography>
-        </Box>
-        <DotsThreeVertical size={20} />
+      <Box
+        p={1.5}
+        sx={{
+          backgroundColor: el.incoming
+            ? theme.palette.background.paper
+            : theme.palette.primary.main,
+          borderRadius: 1.5,
+          width: 'max-content'
+        }}>
+        <Typography variant={'body2'} color={el.incoming ? theme.palette.text : '#fff'}>
+          {el.message}
+        </Typography>
       </Box>
+      <MessageOptions />
     </Stack>
   );
 };
@@ -66,6 +65,7 @@ const MediaMsg = ({ el }) => {
           </Typography>
         </Stack>
       </Box>
+      <MessageOptions />
     </Stack>
   );
 };
@@ -109,6 +109,7 @@ const ReplyMsg = ({ el }) => {
           </Typography>
         </Stack>
       </Box>
+      <MessageOptions />
     </Stack>
   );
 };
@@ -171,6 +172,7 @@ const LinkMsg = ({ el }) => {
           </Stack>
         </Stack>
       </Box>
+      <MessageOptions />
     </Stack>
   );
 };
@@ -209,7 +211,47 @@ const DocMsg = ({ el }) => {
           </Typography>
         </Stack>
       </Box>
+      <MessageOptions />
     </Stack>
+  );
+};
+
+const MessageOptions = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <>
+      <DotsThreeVertical
+        size={20}
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      />
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button'
+        }}>
+        <Stack spacing={1} px={1}>
+          {Message_options.map((option, index) => (
+            <MenuItem key={index} onClick={handleClose}>
+              {option.title}
+            </MenuItem>
+          ))}
+        </Stack>
+      </Menu>
+    </>
   );
 };
 
