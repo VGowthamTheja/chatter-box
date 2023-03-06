@@ -1,7 +1,7 @@
-import { useTranslation } from "react-i18next";
-import useSettings from "./useSettings";
+import { useTranslation } from 'react-i18next';
+import useSettings from './useSettings';
 // config
-import { allLangs, defaultLang } from "../config";
+import { allLangs, defaultLang } from '../config';
 
 // ----------------------------------------------------------------------
 
@@ -10,10 +10,9 @@ export default function useLocales() {
 
   const { onChangeDirectionByLang } = useSettings();
 
-  const langStorage = localStorage.getItem("i18nextLng");
+  const langStorage = localStorage.getItem('i18nextLng');
 
-  const currentLang =
-    allLangs.find((_lang) => _lang.value === langStorage) || defaultLang;
+  const currentLang = allLangs.find((_lang) => _lang.value === langStorage) || defaultLang;
 
   const handleChangeLanguage = (newlang) => {
     i18n.changeLanguage(newlang);
@@ -24,6 +23,6 @@ export default function useLocales() {
     onChangeLang: handleChangeLanguage,
     translate: (text, options) => translate(text, options),
     currentLang,
-    allLangs,
+    allLangs
   };
 }

@@ -1,10 +1,10 @@
 // ----------------------------------------------------------------------
 
 export default function getFileData(file, index) {
-  if (typeof file === "string") {
+  if (typeof file === 'string') {
     return {
       key: index ? `${file}-${index}` : file,
-      preview: file,
+      preview: file
     };
   }
 
@@ -16,6 +16,6 @@ export default function getFileData(file, index) {
     type: file.type,
     preview: file.preview,
     lastModified: file.lastModified,
-    lastModifiedDate: file.lastModifiedDate,
+    lastModifiedDate: file.lastModifiedDate
   };
 }

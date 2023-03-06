@@ -1,4 +1,4 @@
-import { StarIcon } from "./CustomIcons";
+import { StarIcon } from './CustomIcons';
 
 // ----------------------------------------------------------------------
 
@@ -10,19 +10,19 @@ export default function Rating(theme) {
     MuiRating: {
       defaultProps: {
         emptyIcon: <StarIcon />,
-        icon: <StarIcon />,
+        icon: <StarIcon />
       },
 
       styleOverrides: {
         root: {
-          "&.Mui-disabled": {
-            opacity: 0.48,
-          },
+          '&.Mui-disabled': {
+            opacity: 0.48
+          }
         },
         iconEmpty: { color: theme.palette.grey[500_48] },
-        sizeSmall: { "& svg": { ...ICON_SMALL } },
-        sizeLarge: { "& svg": { ...ICON_LARGE } },
-      },
-    },
+        sizeSmall: { '& svg': { ...ICON_SMALL } },
+        sizeLarge: { '& svg': { ...ICON_LARGE } }
+      }
+    }
   };
 }

@@ -1,33 +1,23 @@
-import {
-  Box,
-  Divider,
-  IconButton,
-  Link,
-  Stack,
-  Typography,
-} from "@mui/material";
-import React from "react";
-import { useTheme } from "@mui/material/styles";
+import { Box, Divider, IconButton, Link, Stack, Typography } from '@mui/material';
+import React from 'react';
+import { useTheme } from '@mui/material/styles';
 import {
   ArrowUUpLeft,
   ArrowUUpRight,
+  DotsThreeVertical,
   DownloadSimple,
-  Image,
-} from "phosphor-react";
+  Image
+} from 'phosphor-react';
 
 const Timeline = ({ el }) => {
   const theme = useTheme();
   return (
-    <Stack
-      direction={"row"}
-      alignItems="center"
-      justifyContent={"space-between"}
-    >
-      <Divider sx={{ width: "46%" }} />
-      <Typography variant={"caption"} color={theme.palette.text}>
+    <Stack direction={'row'} alignItems="center" justifyContent={'space-between'}>
+      <Divider sx={{ width: '46%' }} />
+      <Typography variant={'caption'} color={theme.palette.text}>
         {el.text}
       </Typography>
-      <Divider sx={{ width: "46%" }} />
+      <Divider sx={{ width: '46%' }} />
     </Stack>
   );
 };
@@ -35,7 +25,7 @@ const Timeline = ({ el }) => {
 const TextMsg = ({ el }) => {
   const theme = useTheme();
   return (
-    <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
+    <Stack direction={'row'} justifyContent={el.incoming ? 'start' : 'end'}>
       <Box
         p={1.5}
         sx={{
@@ -43,16 +33,14 @@ const TextMsg = ({ el }) => {
             ? theme.palette.background.paper
             : theme.palette.primary.main,
           borderRadius: 1.5,
-          width: "max-content",
+          width: 'max-content'
         }}
       >
-        <Typography
-          variant={"body2"}
-          color={el.incoming ? theme.palette.text : "#fff"}
-        >
+        <Typography variant={'body2'} color={el.incoming ? theme.palette.text : '#fff'}>
           {el.message}
         </Typography>
       </Box>
+      <DotsThreeVertical size={20} />
     </Stack>
   );
 };
@@ -60,7 +48,7 @@ const TextMsg = ({ el }) => {
 const MediaMsg = ({ el }) => {
   const theme = useTheme();
   return (
-    <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
+    <Stack direction={'row'} justifyContent={el.incoming ? 'start' : 'end'}>
       <Box
         p={1.5}
         sx={{
@@ -68,19 +56,12 @@ const MediaMsg = ({ el }) => {
             ? theme.palette.background.paper
             : theme.palette.primary.main,
           borderRadius: 1.5,
-          width: "max-content",
+          width: 'max-content'
         }}
       >
         <Stack spacing={1}>
-          <img
-            src={el.img}
-            alt={el.message}
-            style={{ maxHeight: 210, borderRadius: 10 }}
-          />
-          <Typography
-            variant="body2"
-            color={el.incoming ? theme.palette.text : "#fff"}
-          >
+          <img src={el.img} alt={el.message} style={{ maxHeight: 210, borderRadius: 10 }} />
+          <Typography variant="body2" color={el.incoming ? theme.palette.text : '#fff'}>
             {el.message}
           </Typography>
         </Stack>
@@ -92,7 +73,7 @@ const MediaMsg = ({ el }) => {
 const ReplyMsg = ({ el }) => {
   const theme = useTheme();
   return (
-    <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
+    <Stack direction={'row'} justifyContent={el.incoming ? 'start' : 'end'}>
       <Box
         p={1.5}
         sx={{
@@ -100,7 +81,7 @@ const ReplyMsg = ({ el }) => {
             ? theme.palette.background.paper
             : theme.palette.primary.main,
           borderRadius: 1.5,
-          width: "max-content",
+          width: 'max-content'
         }}
       >
         <Stack spacing={2}>
@@ -111,16 +92,12 @@ const ReplyMsg = ({ el }) => {
             alignItems="center"
             sx={{
               backgroundColor: theme.palette.background.default,
-              borderRadius: 1,
+              borderRadius: 1
             }}
           >
-            <Box sx={{ width: "100%" }}>
-              <Typography sx={{ width: "100%" }} variant="caption">
-                {el.incoming ? (
-                  <ArrowUUpRight size={12} />
-                ) : (
-                  <ArrowUUpLeft size={12} />
-                )}
+            <Box sx={{ width: '100%' }}>
+              <Typography sx={{ width: '100%' }} variant="caption">
+                {el.incoming ? <ArrowUUpRight size={12} /> : <ArrowUUpLeft size={12} />}
                 reply
               </Typography>
               <Divider orientation="horizontal" flexItem />
@@ -129,10 +106,7 @@ const ReplyMsg = ({ el }) => {
               {el.message}
             </Typography>
           </Stack>
-          <Typography
-            variant="body2"
-            color={el.incoming ? theme.palette.text : "#fff"}
-          >
+          <Typography variant="body2" color={el.incoming ? theme.palette.text : '#fff'}>
             {el.reply}
           </Typography>
         </Stack>
@@ -144,7 +118,7 @@ const ReplyMsg = ({ el }) => {
 const LinkMsg = ({ el }) => {
   const theme = useTheme();
   return (
-    <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
+    <Stack direction={'row'} justifyContent={el.incoming ? 'start' : 'end'}>
       <Box
         p={1.5}
         sx={{
@@ -152,7 +126,7 @@ const LinkMsg = ({ el }) => {
             ? theme.palette.background.default
             : theme.palette.primary.main,
           borderRadius: 1.5,
-          width: "max-content",
+          width: 'max-content'
         }}
       >
         <Stack spacing={2}>
@@ -162,22 +136,18 @@ const LinkMsg = ({ el }) => {
             alignItems="center"
             sx={{
               backgroundColor: theme.palette.background.paper,
-              borderRadius: 1,
+              borderRadius: 1
             }}
           >
-            <img
-              src={el.preview}
-              alt={el.message}
-              style={{ maxHeight: 210, borderRadius: 10 }}
-            />
+            <img src={el.preview} alt={el.message} style={{ maxHeight: 210, borderRadius: 10 }} />
             <Stack
               spacing={2}
               sx={{
                 backgroundColor: theme.palette.background.default,
-                height: "100%",
+                height: '100%',
                 borderRadius: 1,
                 p: 2,
-                width: "100%",
+                width: '100%'
               }}
               alignItems="center"
             >
@@ -188,9 +158,9 @@ const LinkMsg = ({ el }) => {
                 variant="subtitle2"
                 color={theme.palette.text}
                 sx={{
-                  textDecoration: "underline",
-                  cursor: "pointer",
-                  color: theme.palette.primary.main,
+                  textDecoration: 'underline',
+                  cursor: 'pointer',
+                  color: theme.palette.primary.main
                 }}
                 component={Link}
                 href="https://www.youtube.com"
@@ -199,9 +169,9 @@ const LinkMsg = ({ el }) => {
               </Typography>
             </Stack>
             <Typography
-              sx={{ marginTop: "10px !important", width: "100%" }}
+              sx={{ marginTop: '10px !important', width: '100%' }}
               variant="body2"
-              color={el.incoming ? theme.palette.text : "#fff"}
+              color={el.incoming ? theme.palette.text : '#fff'}
             >
               {el.message}
             </Typography>
@@ -215,7 +185,7 @@ const LinkMsg = ({ el }) => {
 const DocMsg = ({ el }) => {
   const theme = useTheme();
   return (
-    <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
+    <Stack direction={'row'} justifyContent={el.incoming ? 'start' : 'end'}>
       <Box
         p={1.5}
         sx={{
@@ -223,13 +193,10 @@ const DocMsg = ({ el }) => {
             ? theme.palette.background.paper
             : theme.palette.primary.main,
           borderRadius: 1.5,
-          width: "max-content",
+          width: 'max-content'
         }}
       >
-        <Stack
-          spacing={2}
-          sx={{ backgroundColor: theme.palette.background.paper }}
-        >
+        <Stack spacing={2} sx={{ backgroundColor: theme.palette.background.paper }}>
           <Stack
             p={2}
             direction="row"
@@ -237,7 +204,7 @@ const DocMsg = ({ el }) => {
             alignItems="center"
             sx={{
               backgroundColor: theme.palette.background.default,
-              borderRadius: 1,
+              borderRadius: 1
             }}
           >
             <Image size={48} />
@@ -246,10 +213,7 @@ const DocMsg = ({ el }) => {
               <DownloadSimple size={24} />
             </IconButton>
           </Stack>
-          <Typography
-            variant="body2"
-            sx={{ color: el.incoming ? theme.palette.text : "#fff" }}
-          >
+          <Typography variant="body2" sx={{ color: el.incoming ? theme.palette.text : '#fff' }}>
             {el.message}
           </Typography>
         </Stack>

@@ -5,15 +5,15 @@ export default function Typography(theme) {
     MuiTypography: {
       styleOverrides: {
         paragraph: {
-          marginBottom: theme.spacing(2),
+          marginBottom: theme.spacing(2)
         },
         gutterBottom: {
-          marginBottom: theme.spacing(1),
+          marginBottom: theme.spacing(1)
         },
         article: {
-          fontWeight: 700,
-        },
-      },
-    },
+          fontWeight: 700
+        }
+      }
+    }
   };
 }

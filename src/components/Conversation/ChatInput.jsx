@@ -1,60 +1,45 @@
-import React from "react";
-import { styled } from "@mui/material/styles";
-import {
-  Fab,
-  IconButton,
-  InputAdornment,
-  Stack,
-  TextField,
-  Tooltip,
-} from "@mui/material";
-import {
-  LinkSimple,
-  Smiley,
-  User,
-  File,
-  Camera,
-  Image,
-  Sticker,
-} from "phosphor-react";
+import React from 'react';
+import { styled } from '@mui/material/styles';
+import { Fab, IconButton, InputAdornment, Stack, TextField, Tooltip } from '@mui/material';
+import { LinkSimple, Smiley, User, File, Camera, Image, Sticker } from 'phosphor-react';
 
 const StyledInput = styled(TextField)(({ theme }) => ({
-  "& .MuiInputBase-input": {
-    padding: "12px 0px",
-  },
+  '& .MuiInputBase-input': {
+    padding: '12px 0px'
+  }
 }));
 
 const Actions = [
   {
-    color: "#4da5fe",
+    color: '#4da5fe',
     icon: <Image size={24} />,
     y: 102,
-    title: "Photo/Video",
+    title: 'Photo/Video'
   },
   {
-    color: "#1b8cfe",
+    color: '#1b8cfe',
     icon: <Sticker size={24} />,
     y: 172,
-    title: "Stickers",
+    title: 'Stickers'
   },
   {
-    color: "#1072e4",
+    color: '#1072e4',
     icon: <Camera size={24} />,
     y: 242,
-    title: "Image",
+    title: 'Image'
   },
   {
-    color: "#0159b2",
+    color: '#0159b2',
     icon: <File size={24} />,
     y: 312,
-    title: "Document",
+    title: 'Document'
   },
   {
-    color: "#013f7f",
+    color: '#013f7f',
     icon: <User size={24} />,
     y: 382,
-    title: "Contact",
-  },
+    title: 'Contact'
+  }
 ];
 
 const ChatInput = ({ setOpenPicker }) => {
@@ -70,20 +55,20 @@ const ChatInput = ({ setOpenPicker }) => {
       InputProps={{
         disableUnderline: true,
         startAdornment: (
-          <Stack sx={{ width: "max-content" }}>
+          <Stack sx={{ width: 'max-content' }}>
             <Stack
               sx={{
-                position: "relative",
-                display: openAction ? "inline-block" : "none",
+                position: 'relative',
+                display: openAction ? 'inline-block' : 'none'
               }}
             >
               {Actions.map((action) => (
                 <Tooltip title={action.title} placement="right">
                   <Fab
                     sx={{
-                      position: "absolute",
+                      position: 'absolute',
                       top: -action.y,
-                      backgroundColor: action.color,
+                      backgroundColor: action.color
                     }}
                   >
                     {action.icon}
@@ -104,7 +89,7 @@ const ChatInput = ({ setOpenPicker }) => {
               <Smiley size={24} />
             </IconButton>
           </InputAdornment>
-        ),
+        )
       }}
     />
   );

@@ -1,5 +1,5 @@
 //
-import { varTranEnter, varTranExit } from "./transition";
+import { varTranEnter, varTranExit } from './transition';
 
 // ----------------------------------------------------------------------
 
@@ -16,13 +16,13 @@ export const varRotate = (props) => {
       animate: {
         opacity: 1,
         rotate: 0,
-        transition: varTranEnter({ durationIn, easeIn }),
+        transition: varTranEnter({ durationIn, easeIn })
       },
       exit: {
         opacity: 0,
         rotate: -360,
-        transition: varTranExit({ durationOut, easeOut }),
-      },
+        transition: varTranExit({ durationOut, easeOut })
+      }
     },
 
     // OUT
@@ -31,8 +31,8 @@ export const varRotate = (props) => {
       animate: {
         opacity: 0,
         rotate: -360,
-        transition: varTranExit({ durationOut, easeOut }),
-      },
-    },
+        transition: varTranExit({ durationOut, easeOut })
+      }
+    }
   };
 };
