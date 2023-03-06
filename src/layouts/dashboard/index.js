@@ -1,9 +1,9 @@
 import { useTheme, styled } from '@mui/material/styles';
-import { Avatar, Box, Divider, IconButton, Stack, Switch } from '@mui/material';
+import { Avatar, Box, Divider, IconButton, Menu, MenuItem, Stack, Switch } from '@mui/material';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import logo from '../../assets/Images/logo.ico';
-import { Nav_Buttons } from '../../data';
+import { Nav_Buttons, Profile_Menu } from '../../data';
 import { Gear } from 'phosphor-react';
 import { faker } from '@faker-js/faker';
 import useSettings from '../../hooks/useSettings';
@@ -55,6 +55,15 @@ const DashboardLayout = () => {
   const [selected, setSelected] = React.useState(0);
 
   const { onToggleMode } = useSettings();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <Box
@@ -144,7 +153,46 @@ const DashboardLayout = () => {
 
         <Stack spacing={4} alignItems="center">
           <AntSwitch defaultChecked onChange={onToggleMode} />
-          <Avatar sx={{ width: 40, height: 40 }} src={faker.image.avatar()} />
+          <Avatar
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            id="basic-button"
+            sx={{ width: 40, height: 40 }}
+            src={faker.image.avatar()}
+            onClick={handleClick}
+          />
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right'
+            }}
+            transformOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left'
+            }}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button'
+            }}>
+            <Stack spacing={1} px={1}>
+              {Profile_Menu.map((option, index) => (
+                <MenuItem key={index} onClick={handleClose}>
+                  <Stack
+                    sx={{ width: '100px' }}
+                    direction="row"
+                    alignItems={'center'}
+                    justifyContent={'space-between'}>
+                    <span>{option.title}</span>
+                    {option.icon}
+                  </Stack>
+                </MenuItem>
+              ))}
+            </Stack>
+          </Menu>
         </Stack>
       </Stack>
       <Outlet />
