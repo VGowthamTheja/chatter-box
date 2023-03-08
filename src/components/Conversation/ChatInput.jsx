@@ -60,7 +60,8 @@ const ChatInput = ({ setOpenPicker }) => {
               sx={{
                 position: 'relative',
                 display: openAction ? 'inline-block' : 'none'
-              }}>
+              }}
+            >
               {Actions.map((action, index) => (
                 <Tooltip key={index} title={action.title} placement="right">
                   <Fab
@@ -68,7 +69,8 @@ const ChatInput = ({ setOpenPicker }) => {
                       position: 'absolute',
                       top: -action.y,
                       backgroundColor: action.color
-                    }}>
+                    }}
+                  >
                     {action.icon}
                   </Fab>
                 </Tooltip>

@@ -65,7 +65,8 @@ function AnimateWrap({ size, children }) {
       variants={(isSmall && varSmall) || (isLarge && varLarge) || varMedium}
       sx={{
         display: 'inline-flex'
-      }}>
+      }}
+    >
       {children}
     </Box>
   );

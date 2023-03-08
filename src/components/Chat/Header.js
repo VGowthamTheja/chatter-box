@@ -83,19 +83,22 @@ const ChatHeader = () => {
       sx={{
         backgroundColor: theme.palette.mode === 'light' ? '#F8FAFF' : theme.palette.background,
         boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.25)'
-      }}>
+      }}
+    >
       <Stack
         alignItems={'center'}
         direction={'row'}
         sx={{ width: '100%', height: '100%' }}
-        justifyContent="space-between">
+        justifyContent="space-between"
+      >
         <Stack
           onClick={() => {
             searchParams.set('open', true);
             setSearchParams(searchParams);
           }}
           spacing={2}
-          direction="row">
+          direction="row"
+        >
           <Box>
             <StyledBadge
               overlap="circular"
@@ -103,7 +106,8 @@ const ChatHeader = () => {
                 vertical: 'bottom',
                 horizontal: 'right'
               }}
-              variant="dot">
+              variant="dot"
+            >
               <Avatar alt={faker.name.fullName()} src={faker.image.avatar()} />
             </StyledBadge>
           </Box>
@@ -131,7 +135,8 @@ const ChatHeader = () => {
             aria-controls={openConversationMenu ? 'conversation-positioned-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={openConversationMenu ? 'true' : undefined}
-            onClick={handleClickConversationMenu}>
+            onClick={handleClickConversationMenu}
+          >
             <CaretDown />
           </IconButton>
           <Menu
@@ -151,7 +156,8 @@ const ChatHeader = () => {
             transformOrigin={{
               vertical: 'top',
               horizontal: 'right'
-            }}>
+            }}
+          >
             <Box p={1}>
               <Stack spacing={1}>
                 {Conversation_Menu.map((el) => (
@@ -160,7 +166,8 @@ const ChatHeader = () => {
                       sx={{ minWidth: 100 }}
                       direction="row"
                       alignItems={'center'}
-                      justifyContent="space-between">
+                      justifyContent="space-between"
+                    >
                       <span>{el.title}</span>
                     </Stack>{' '}
                   </MenuItem>

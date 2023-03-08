@@ -73,7 +73,8 @@ const ChatInput = ({ openPicker, setOpenPicker }) => {
               sx={{
                 position: 'relative',
                 display: openActions ? 'inline-block' : 'none'
-              }}>
+              }}
+            >
               {Actions.map((el, index) => (
                 <Tooltip key={index} placement="right" title={el.title}>
                   <Fab
@@ -85,7 +86,8 @@ const ChatInput = ({ openPicker, setOpenPicker }) => {
                       top: -el.y,
                       backgroundColor: el.color
                     }}
-                    aria-label="add">
+                    aria-label="add"
+                  >
                     {el.icon}
                   </Fab>
                 </Tooltip>
@@ -96,7 +98,8 @@ const ChatInput = ({ openPicker, setOpenPicker }) => {
               <IconButton
                 onClick={() => {
                   setOpenActions(!openActions);
-                }}>
+                }}
+              >
                 <LinkSimple />
               </IconButton>
             </InputAdornment>
@@ -108,7 +111,8 @@ const ChatInput = ({ openPicker, setOpenPicker }) => {
               <IconButton
                 onClick={() => {
                   setOpenPicker(!openPicker);
-                }}>
+                }}
+              >
                 <Smiley />
               </IconButton>
             </InputAdornment>
@@ -132,14 +136,16 @@ const Footer = () => {
       sx={{
         position: 'relative',
         backgroundColor: 'transparent !important'
-      }}>
+      }}
+    >
       <Box
         p={isMobile ? 1 : 2}
         width={'100%'}
         sx={{
           backgroundColor: theme.palette.mode === 'light' ? '#F8FAFF' : theme.palette.background,
           boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.25)'
-        }}>
+        }}
+      >
         <Stack direction="row" alignItems={'center'} spacing={isMobile ? 1 : 3}>
           <Stack sx={{ width: '100%' }}>
             <Box
@@ -149,7 +155,8 @@ const Footer = () => {
                 display: openPicker ? 'inline' : 'none',
                 bottom: 81,
                 right: isMobile ? 20 : searchParams.get('open') === 'true' ? 420 : 100
-              }}>
+              }}
+            >
               <Picker theme={theme.palette.mode} data={data} onEmojiSelect={console.log} />
             </Box>
             {/* Chat Input */}
@@ -161,7 +168,8 @@ const Footer = () => {
               width: 48,
               backgroundColor: theme.palette.primary.main,
               borderRadius: 1.5
-            }}>
+            }}
+          >
             <Stack sx={{ height: '100%' }} alignItems={'center'} justifyContent="center">
               <IconButton>
                 <PaperPlaneTilt color="#ffffff" />

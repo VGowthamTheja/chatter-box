@@ -75,14 +75,16 @@ const DashboardLayout = () => {
         width: 100,
         display: 'flex',
         alignItems: 'center'
-      }}>
+      }}
+    >
       <Stack
         direction={'column'}
         alignItems={'center'}
         sx={{ width: '100%' }}
         spacing={3}
         height={'100%'}
-        justifyContent={'space-between'}>
+        justifyContent={'space-between'}
+      >
         <Stack alignItems={'center'} spacing={4}>
           <Box
             sx={{
@@ -91,7 +93,8 @@ const DashboardLayout = () => {
               width: 64,
               borderRadius: 1.5,
               border: `1px solid ${theme.palette.primary.main}`
-            }}>
+            }}
+          >
             <img src={logo} alt="Logo" />
           </Box>
           <Stack sx={{ width: 'max-content' }} direction="column" alignItems={'center'} spacing={3}>
@@ -102,7 +105,8 @@ const DashboardLayout = () => {
                     backgroundColor: theme.palette.primary.main,
                     borderRadius: 1.5
                   }}
-                  key={el.index}>
+                  key={el.index}
+                >
                   <IconButton key={el.index} sx={{ width: 'max-content', color: '#fff' }}>
                     {el.icon}
                   </IconButton>
@@ -114,7 +118,8 @@ const DashboardLayout = () => {
                   sx={{
                     width: 'max-content',
                     color: theme.palette.mode === 'dark' ? '#fff' : '#000'
-                  }}>
+                  }}
+                >
                   {el.icon}
                 </IconButton>
               )
@@ -129,12 +134,14 @@ const DashboardLayout = () => {
                 sx={{
                   backgroundColor: theme.palette.primary.main,
                   borderRadius: 1.5
-                }}>
+                }}
+              >
                 <IconButton
                   sx={{
                     width: 'max-content',
                     color: '#fff'
-                  }}>
+                  }}
+                >
                   <Gear />
                 </IconButton>
               </Box>
@@ -144,7 +151,8 @@ const DashboardLayout = () => {
                 sx={{
                   width: 'max-content',
                   color: theme.palette.mode === 'dark' ? '#fff' : '#000'
-                }}>
+                }}
+              >
                 <Gear />
               </IconButton>
             )}
@@ -177,7 +185,8 @@ const DashboardLayout = () => {
             }}
             MenuListProps={{
               'aria-labelledby': 'basic-button'
-            }}>
+            }}
+          >
             <Stack spacing={1} px={1}>
               {Profile_Menu.map((option, index) => (
                 <MenuItem key={index} onClick={handleClose}>
@@ -185,7 +194,8 @@ const DashboardLayout = () => {
                     sx={{ width: '100px' }}
                     direction="row"
                     alignItems={'center'}
-                    justifyContent={'space-between'}>
+                    justifyContent={'space-between'}
+                  >
                     <span>{option.title}</span>
                     {option.icon}
                   </Stack>

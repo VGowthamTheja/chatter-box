@@ -8,6 +8,8 @@ import Picker from '@emoji-mart/react';
 
 import Message from './Message';
 import ChatInput from './ChatInput';
+import { ToggleSidebar } from '../../redux/slices/app';
+import { useDispatch } from 'react-redux';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -41,6 +43,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const Conversation = () => {
   const theme = useTheme();
   const [openPicker, setOpenPicker] = React.useState(false);
+  const dispatch = useDispatch();
   return (
     <Stack height={'100%'} maxHeight={'100vh'} width={'auto'}>
       {/* chat header */}
@@ -51,21 +54,18 @@ const Conversation = () => {
           backgroundColor:
             theme.palette.mode === 'light' ? '#F8FAFF' : theme.palette.background.paper,
           boxShadow: '0px 0px 2px rgba(0,0,0,0.25)'
-        }}
-      >
+        }}>
         <Stack
           alignItems={'center'}
           direction="row"
           justifyContent={'space-between'}
-          sx={{ width: '100%', height: '100%' }}
-        >
-          <Stack direction={'row'} spacing={2}>
+          sx={{ width: '100%', height: '100%' }}>
+          <Stack onClick={() => dispatch(ToggleSidebar())} direction={'row'} spacing={2}>
             <Box>
               <StyledBadge
                 overlap="circular"
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                variant="dot"
-              >
+                variant="dot">
                 <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
               </StyledBadge>
             </Box>
@@ -78,8 +78,7 @@ const Conversation = () => {
                   fontWeight: 700,
                   fontSize: 11,
                   color: '#9CA3AF'
-                }}
-              >
+                }}>
                 online
               </Typography>
             </Stack>
@@ -131,8 +130,7 @@ const Conversation = () => {
               visibility: 'visible'
             }
           }
-        }}
-      >
+        }}>
         <Message />
       </Box>
       {/* chat footer */}
@@ -143,8 +141,7 @@ const Conversation = () => {
           backgroundColor:
             theme.palette.mode === 'light' ? '#F8FAFF' : theme.palette.background.paper,
           boxShadow: '0px 0px 2px rgba(0,0,0,0.25)'
-        }}
-      >
+        }}>
         <Stack direction={'row'} alignItems="center" spacing={3}>
           <Stack width={'100%'}>
             <Box
@@ -154,8 +151,7 @@ const Conversation = () => {
                 position: 'fixed',
                 bottom: 81,
                 right: 100
-              }}
-            >
+              }}>
               <Picker data={data} onEmojiSelect={console.log} theme={theme.palette.mode} />
             </Box>
             <ChatInput setOpenPicker={setOpenPicker} />
@@ -167,13 +163,11 @@ const Conversation = () => {
               width: 48,
               backgroundColor: theme.palette.primary.main,
               borderRadius: 1.5
-            }}
-          >
+            }}>
             <Stack
               sx={{ height: '100%', width: '100%' }}
               alignItems="center"
-              justifyContent={'center'}
-            >
+              justifyContent={'center'}>
               <IconButton>
                 <PaperPlaneTilt size={24} color={'white'} />
               </IconButton>

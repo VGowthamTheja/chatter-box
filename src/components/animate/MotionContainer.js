@@ -21,7 +21,8 @@ export default function MotionContainer({ animate, action = false, children, ...
         initial={false}
         animate={animate ? 'animate' : 'exit'}
         variants={varContainer()}
-        {...other}>
+        {...other}
+      >
         {children}
       </Box>
     );
@@ -34,7 +35,8 @@ export default function MotionContainer({ animate, action = false, children, ...
       animate="animate"
       exit="exit"
       variants={varContainer()}
-      {...other}>
+      {...other}
+    >
       {children}
     </Box>
   );

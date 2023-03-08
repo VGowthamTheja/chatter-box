@@ -35,7 +35,8 @@ const TextMsg = ({ el }) => {
             : theme.palette.primary.main,
           borderRadius: 1.5,
           width: 'max-content'
-        }}>
+        }}
+      >
         <Typography variant={'body2'} color={el.incoming ? theme.palette.text : '#fff'}>
           {el.message}
         </Typography>
@@ -57,7 +58,8 @@ const MediaMsg = ({ el }) => {
             : theme.palette.primary.main,
           borderRadius: 1.5,
           width: 'max-content'
-        }}>
+        }}
+      >
         <Stack spacing={1}>
           <img src={el.img} alt={el.message} style={{ maxHeight: 210, borderRadius: 10 }} />
           <Typography variant="body2" color={el.incoming ? theme.palette.text : '#fff'}>
@@ -82,7 +84,8 @@ const ReplyMsg = ({ el }) => {
             : theme.palette.primary.main,
           borderRadius: 1.5,
           width: 'max-content'
-        }}>
+        }}
+      >
         <Stack spacing={2}>
           <Stack
             p={2}
@@ -92,7 +95,8 @@ const ReplyMsg = ({ el }) => {
             sx={{
               backgroundColor: theme.palette.background.default,
               borderRadius: 1
-            }}>
+            }}
+          >
             <Box sx={{ width: '100%' }}>
               <Typography sx={{ width: '100%' }} variant="caption">
                 {el.incoming ? <ArrowUUpRight size={12} /> : <ArrowUUpLeft size={12} />}
@@ -126,7 +130,8 @@ const LinkMsg = ({ el }) => {
             : theme.palette.primary.main,
           borderRadius: 1.5,
           width: 'max-content'
-        }}>
+        }}
+      >
         <Stack spacing={2}>
           <Stack
             p={2}
@@ -135,7 +140,8 @@ const LinkMsg = ({ el }) => {
             sx={{
               backgroundColor: theme.palette.background.paper,
               borderRadius: 1
-            }}>
+            }}
+          >
             <img src={el.preview} alt={el.message} style={{ maxHeight: 210, borderRadius: 10 }} />
             <Stack
               spacing={2}
@@ -146,7 +152,8 @@ const LinkMsg = ({ el }) => {
                 p: 2,
                 width: '100%'
               }}
-              alignItems="center">
+              alignItems="center"
+            >
               <Typography variant="subtitle2" color={theme.palette.text}>
                 creating chat app
               </Typography>
@@ -159,14 +166,16 @@ const LinkMsg = ({ el }) => {
                   color: theme.palette.primary.main
                 }}
                 component={Link}
-                href="https://www.youtube.com">
+                href="https://www.youtube.com"
+              >
                 www.youtube.com
               </Typography>
             </Stack>
             <Typography
               sx={{ marginTop: '10px !important', width: '100%' }}
               variant="body2"
-              color={el.incoming ? theme.palette.text : '#fff'}>
+              color={el.incoming ? theme.palette.text : '#fff'}
+            >
               {el.message}
             </Typography>
           </Stack>
@@ -189,7 +198,8 @@ const DocMsg = ({ el }) => {
             : theme.palette.primary.main,
           borderRadius: 1.5,
           width: 'max-content'
-        }}>
+        }}
+      >
         <Stack spacing={2} sx={{ backgroundColor: theme.palette.background.paper }}>
           <Stack
             p={2}
@@ -199,7 +209,8 @@ const DocMsg = ({ el }) => {
             sx={{
               backgroundColor: theme.palette.background.default,
               borderRadius: 1
-            }}>
+            }}
+          >
             <Image size={48} />
             <Typography variant="caption">Abstract.png</Typography>
             <IconButton>
@@ -242,7 +253,8 @@ const MessageOptions = () => {
         onClose={handleClose}
         MenuListProps={{
           'aria-labelledby': 'basic-button'
-        }}>
+        }}
+      >
         <Stack spacing={1} px={1}>
           {Message_options.map((option, index) => (
             <MenuItem key={index} onClick={handleClose}>

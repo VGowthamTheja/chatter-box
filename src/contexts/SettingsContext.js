@@ -191,7 +191,8 @@ const SettingsProvider = ({ children }) => {
 
         // Reset
         onResetSetting
-      }}>
+      }}
+    >
       {children}
     </SettingsContext.Provider>
   );
